@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", serif;
+    color: rgb(255, 17, 0);
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(200, 248, 252);
+    background-position: center;
+    background-size: cover;
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    background-color: rgb(4, 22, 49);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 60px rgb(4, 22, 49);    
+    border: 6px solid rgb(0, 121, 121);
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 15px;
+    text-align: center;
+}
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(17, 255, 255);
+    text-shadow: 0 0 12px rgb(17, 255, 255);
+}
+
+.clock::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #e9ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgb(17, 255, 255);
+    z-index: 2;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hand i{
+    /* width: 5px;
+    height: 100px; */
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgb(17, 255, 255);
+}
+
+#hour i{
+    width: 5px;
+    height: 80px;
+    background-color: rgb(17, 255, 255);
+}
+
+#min i{
+    width: 4px;
+    height: 102px;
+    background-color: rgb(17, 255, 255);
+}
+
+#sec i{
+    width: 2px;
+    height: 115px;
+    background-color: rgb(17, 255, 255);
+    box-shadow: none;
+}
